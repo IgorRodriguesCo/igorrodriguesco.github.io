@@ -1,0 +1,265 @@
+:root {
+    --black: #1b1f23;
+    --white: #fafbfc;
+    --gray-light: #6a737d;
+    --gray: #24292e;
+    --rgba-0-gray: rgba(27, 31, 35, 0);
+    --rgba-1-gray: rgba(27, 31, 35, 1);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+}
+
+.left-container {
+    width: 40vw;
+    height: 100vh;
+    padding: 5% 5% 0 10%;
+}
+
+.right-container {
+    width: 60vw;
+    padding: 5% 10% 5% 5%;
+}
+
+.inner-container {
+    width: 100%;
+    height: 100%;
+}
+
+.left-container .inner-container {
+    position: fixed;
+    max-width: calc(40vw - 10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 50%);
+}
+
+.name {
+    font-size: 32px;
+}
+
+.name h1 {
+    margin: 0;
+    margin-block: 0;
+}
+
+.about {
+    color: var(--gray-light);
+}
+
+.left-footer {
+    font-size: 12px;
+}
+
+.left-footer ul,
+address {
+    display: flex;
+    list-style: none;
+    margin-block: 0;
+    padding-inline-start: 0;
+    align-items: center;
+}
+
+.left-footer li {
+    margin-right: .5rem;
+}
+
+.left-footer a,
+address a {
+    color: var(--white);
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.left-footer a:hover,
+address a:hover {
+    background-color: var(--gray);
+}
+
+.left-footer a svg,
+address svg {
+    fill: var(--white);
+    width: 18px;
+    height: 18px;
+    margin-right: 0.25rem;
+}
+
+address svg {
+    margin-top: 0.1em;
+}
+
+.block-container {
+    color: var(--gray-light);
+    background-color: var(--gray);
+    padding: 2em;
+    margin: 0 0 1rem 0;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+    display: block;
+}
+
+.block-container h2,
+.block-container h4 {
+    color: var(--white);
+}
+
+a.block-container {
+    text-decoration: none;
+}
+
+.block-container:hover {
+    transform: scale(1.05);
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+.right-container .inner-container:hover .block-container {
+    opacity: .3;
+}
+
+.top-shadow,
+.bottom-shadow {
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    z-index: 99;
+}
+
+.top-shadow {
+    background: linear-gradient(0deg, var(--rgba-0-gray) 0%, var(--rgba-1-gray) 100%);
+    top: 0;
+}
+
+.bottom-shadow {
+    background: linear-gradient(180deg, var(--rgba-0-gray) 0%, var(--rgba-1-gray) 100%);
+    bottom: 0;
+}
+
+@media (max-width: 1280px) {
+    .left-container {
+        padding: 5% 5% 0 5%;
+    }
+
+    .right-container {
+        padding: 5%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .top-shadow {
+        display: none;
+    }
+
+    .main-container {
+        flex-wrap: wrap;
+        padding-bottom: 5%;
+    }
+
+    .left-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .right-container {
+        width: 100%;
+    }
+
+    .left-container .inner-container {
+        position: relative;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .left-container .inner-container>* {
+        margin-bottom: 2rem;
+    }
+
+    .left-footer img {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+.left-container .inner-container {
+    animation-duration: 1s;
+    animation-name: bottomTotop;
+}
+
+@keyframes bottomTotop {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+
+.block-container:nth-child(1) {
+    animation-duration: 250ms;
+    animation-name: rightToleft;
+}
+
+.block-container:nth-child(2) {
+    animation-duration: 500ms;
+    animation-name: rightToleft;
+}
+
+.block-container:nth-child(3) {
+    animation-duration: 750ms;
+    animation-name: rightToleft;
+}
+
+.block-container:nth-child(4) {
+    animation-duration: 1s;
+    animation-name: rightToleft;
+}
+
+@keyframes rightToleft {
+    from {
+        margin-left: 100%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
