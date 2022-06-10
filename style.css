@@ -62,6 +62,7 @@ body {
 
 .left-footer {
     font-size: 12px;
+    margin-top: 1rem;
 }
 
 .left-footer ul,
@@ -75,6 +76,11 @@ address {
 
 .left-footer li {
     margin-right: .5rem;
+}
+
+.left-footer img {
+    max-width: 48px;
+    height: auto;
 }
 
 .left-footer a,
@@ -152,6 +158,12 @@ a.block-container {
     bottom: 0;
 }
 
+@media (hover: none) {
+    .right-container .inner-container:hover .block-container {
+        opacity: 1;
+    }
+}
+
 @media (max-width: 1280px) {
     .left-container {
         padding: 5% 5% 0 5%;
@@ -194,7 +206,7 @@ a.block-container {
 
     .left-footer img {
         width: 48px;
-        height: 48px;
+        height: auto;
     }
 
 }
